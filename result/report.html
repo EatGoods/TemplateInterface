@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+a.popup_link:hover {
+    color: red;
+}
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 800px;
+}
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+    text-align:center;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+<div class='heading'>
+<h1>测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-06-03 11:19:23</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.786788</p>
+<p class='attribute'><strong>Status:</strong> Pass 3 | Failure 1</p>
+
+<p class='description'>测试说明</p>
+</div>
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td colspan='2'>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testGetShopList_0</td>
+    <td>GetShopList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>testGetShopList</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 测试开始
+&lt;RequestsCookieJar[&lt;Cookie PHPSESSID=991cj3cmdv59rek7f1j5djqhuh for .t5128.com/&gt;]&gt;
+{
+  "code": 200,
+  "data": {
+    "list": [
+      {
+        "business_id": 1062,
+        "cert_time": null,
+        "cert_type": 0,
+        "create_time": "2019-05-06 11:27:54",
+        "end_time": "2020-05-06 11:29:31",
+        "is_delete": 1,
+        "is_domain": 0,
+        "is_open": 0,
+        "open_appid": null,
+        "scate_id": 3,
+        "shop_desc": null,
+        "shop_id": 128,
+        "shop_lock": 2,
+        "shop_logo": null,
+        "shop_name": "阿三大苏打啊啊飒飒",
+        "shop_qrcode": "/goods/5ccfa9ba24d36.png",
+        "shop_status": 1,
+        "shop_type": 2,
+        "stoken": "f0be8cfa2d48a80dec468d9c5dca730b",
+        "template_id": 0,
+        "update_time": "2019-05-06 11:27:54"
+      },
+      {
+        "business_id": 1062,
+        "cert_time": "2019-05-22 00:00:00",
+        "cert_type": 0,
+        "create_time": "2019-05-22 18:54:45",
+        "end_time": "2020-05-22 18:54:45",
+        "is_delete": 1,
+        "is_domain": 0,
+        "is_open": 0,
+        "open_appid": null,
+        "scate_id": 9,
+        "shop_desc": null,
+        "shop_id": 145,
+        "shop_lock": 2,
+        "shop_logo": null,
+        "shop_name": "新店铺712",
+        "shop_qrcode": "/goods/5ce52a7558f91.png",
+        "shop_status": 1,
+        "shop_type": 1,
+        "stoken": "ee8dcd08e319c324af79237a86563961",
+        "template_id": 0,
+        "update_time": "2019-05-22 18:54:47"
+      }
+    ],
+    "totalCount": 1
+  },
+  "msg": "success"
+}
+128
+True
+测试结束
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testEnterShop_0</td>
+    <td>EnterShop</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>testGetEnterShop</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: 测试开始
+&lt;RequestsCookieJar[]&gt;
+{
+  "code": 200,
+  "data": [
+    {
+      "condition": "",
+      "create_time": "2019-03-05 11:01:31",
+      "icon": "ios-home-outline",
+      "id": 1,
+      "ismenu": 1,
+      "path": "/index?is=1",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "控制台",
+      "update_time": "2019-03-05 11:01:34",
+      "weigh": 1
+    },
+    {
+      "child": [
+        {
+          "child": [
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:53:11",
+              "icon": "",
+              "id": 184,
+              "ismenu": 1,
+              "path": "/h5-navigation",
+              "pid": 162,
+              "remark": "",
+              "status": 1,
+              "title": "导航菜单",
+              "update_time": "2019-03-05 16:53:13",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:53:26",
+              "icon": "",
+              "id": 185,
+              "ismenu": 1,
+              "path": "/h5-banner",
+              "pid": 162,
+              "remark": "",
+              "status": 1,
+              "title": "轮播banner",
+              "update_time": "2019-03-05 16:53:28",
+              "weigh": 0
+            }
+          ],
+          "condition": "",
+          "create_time": "2019-03-05 16:37:43",
+          "icon": "",
+          "id": 162,
+          "ismenu": 1,
+          "path": "/h5-navigation",
+          "pid": 2,
+          "remark": "",
+          "status": 1,
+          "title": "h5店铺",
+          "update_time": "2019-03-05 16:37:46",
+          "weigh": 0
+        },
+        {
+          "child": [
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:54:24",
+              "icon": "",
+              "id": 186,
+              "ismenu": 1,
+              "path": "/public-number",
+              "pid": 163,
+              "remark": "",
+              "status": 1,
+              "title": "授权管理",
+              "update_time": "2019-03-05 16:54:26",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-19 09:53:09",
+              "icon": "",
+              "id": 230,
+              "ismenu": 1,
+              "path": "/bottom-menus",
+              "pid": 163,
+              "remark": "",
+              "status": 1,
+              "title": "自定义菜单",
+              "update_time": "2019-03-19 09:53:12",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-19 09:53:38",
+              "icon": "",
+              "id": 231,
+              "ismenu": 1,
+              "path": "/keyword-return",
+              "pid": 163,
+              "remark": "",
+              "status": 1,
+              "title": "关键词回复",
+              "update_time": "2019-03-19 09:53:42",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-19 09:54:05",
+              "icon": "",
+              "id": 232,
+              "ismenu": 1,
+              "path": "/attention-return",
+              "pid": 163,
+              "remark": "",
+              "status": 1,
+              "title": "关注后回复",
+              "update_time": "2019-03-19 09:54:07",
+              "weigh": 0
+            }
+          ],
+          "condition": "",
+          "create_time": "2019-03-05 16:38:05",
+          "icon": "",
+          "id": 163,
+          "ismenu": 1,
+          "path": "/public-number",
+          "pid": 2,
+          "remark": "",
+          "status": 1,
+          "title": "微信公众号",
+          "update_time": "2019-03-05 16:38:07",
+          "weigh": 0
+        },
+        {
+          "child": [
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:54:54",
+              "icon": "",
+              "id": 187,
+              "ismenu": 1,
+              "path": "/small-program",
+              "pid": 164,
+              "remark": "",
+              "status": 1,
+              "title": "授权管理",
+              "update_time": "2019-03-05 16:54:55",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:55:09",
+              "icon": "",
+              "id": 188,
+              "ismenu": 1,
+              "path": "/applet-navigation",
+              "pid": 164,
+              "remark": "",
+              "status": 1,
+              "title": "导航菜单",
+              "update_time": "2019-03-05 16:55:11",
+              "weigh": 0
+            }
+          ],
+          "condition": "",
+          "create_time": "2019-03-05 16:38:25",
+          "icon": "",
+          "id": 164,
+          "ismenu": 1,
+          "path": "/small-program",
+          "pid": 2,
+          "remark": "",
+          "status": 1,
+          "title": "微信小程序",
+          "update_time": "2019-03-05 16:38:28",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-05 11:01:53",
+      "icon": "md-chatbubbles",
+      "id": 2,
+      "ismenu": 1,
+      "path": "/h5-navigation",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "店铺",
+      "update_time": "2019-03-05 11:01:55",
+      "weigh": 2
+    },
+    {
+      "child": [
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:39:08",
+          "icon": "",
+          "id": 165,
+          "ismenu": 1,
+          "path": "/goods-management",
+          "pid": 157,
+          "remark": "",
+          "status": 1,
+          "title": "商品管理",
+          "update_time": "2019-03-05 16:39:10",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:39:23",
+          "icon": "",
+          "id": 166,
+          "ismenu": 1,
+          "path": "/goods-release",
+          "pid": 157,
+          "remark": "",
+          "status": 1,
+          "title": "商品发布",
+          "update_time": "2019-03-05 16:39:26",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:39:38",
+          "icon": "",
+          "id": 167,
+          "ismenu": 1,
+          "path": "/goods-classification",
+          "pid": 157,
+          "remark": "",
+          "status": 1,
+          "title": "商品分类",
+          "update_time": "2019-03-05 16:39:41",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-05 16:32:29",
+      "icon": "ios-filing",
+      "id": 157,
+      "ismenu": 1,
+      "path": "/goods-management",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "商品",
+      "update_time": "2019-03-05 16:32:32",
+      "weigh": 3
+    },
+    {
+      "child": [
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:40:13",
+          "icon": "",
+          "id": 168,
+          "ismenu": 1,
+          "path": "/order-survey",
+          "pid": 158,
+          "remark": "",
+          "status": 1,
+          "title": "订单概况",
+          "update_time": "2019-03-05 16:40:15",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:40:25",
+          "icon": "",
+          "id": 169,
+          "ismenu": 1,
+          "path": "/all-orders",
+          "pid": 158,
+          "remark": "",
+          "status": 1,
+          "title": "全部订单",
+          "update_time": "2019-03-05 16:40:27",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:40:45",
+          "icon": "",
+          "id": 170,
+          "ismenu": 1,
+          "path": "/problem-order",
+          "pid": 158,
+          "remark": "",
+          "status": 1,
+          "title": "问题订单",
+          "update_time": "2019-03-05 16:40:48",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:41:41",
+          "icon": "",
+          "id": 171,
+          "ismenu": 1,
+          "path": "/star-order",
+          "pid": 158,
+          "remark": "",
+          "status": 1,
+          "title": "加星订单",
+          "update_time": "2019-03-05 16:41:44",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-05 16:32:41",
+      "icon": "md-basket",
+      "id": 158,
+      "ismenu": 1,
+      "path": "/order-survey",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "订单",
+      "update_time": "2019-03-05 16:32:45",
+      "weigh": 4
+    },
+    {
+      "child": [
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:42:19",
+          "icon": "",
+          "id": 172,
+          "ismenu": 1,
+          "path": "/financial-overview",
+          "pid": 159,
+          "remark": "",
+          "status": 1,
+          "title": "财务概览",
+          "update_time": "2019-03-05 16:42:21",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:42:37",
+          "icon": "",
+          "id": 173,
+          "ismenu": 1,
+          "path": "/account-statement",
+          "pid": 159,
+          "remark": "",
+          "status": 1,
+          "title": "对账单",
+          "update_time": "2019-03-05 16:42:40",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:43:29",
+          "icon": "",
+          "id": 174,
+          "ismenu": 1,
+          "path": "/transaction-details",
+          "pid": 159,
+          "remark": "",
+          "status": 1,
+          "title": "交易明细",
+          "update_time": "2019-03-05 16:43:31",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-05 16:32:56",
+      "icon": "logo-yen",
+      "id": 159,
+      "ismenu": 1,
+      "path": "/financial-overview",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "财务",
+      "update_time": "2019-03-05 16:32:58",
+      "weigh": 5
+    },
+    {
+      "child": [
+        {
+          "condition": "",
+          "create_time": "2019-03-12 10:30:43",
+          "icon": "",
+          "id": 229,
+          "ismenu": 1,
+          "path": "/customer-manage",
+          "pid": 228,
+          "remark": "",
+          "status": 1,
+          "title": "客户管理",
+          "update_time": "2019-03-12 10:30:45",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-12 10:30:11",
+      "icon": "ios-people",
+      "id": 228,
+      "ismenu": 1,
+      "path": "/customer-manage",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "客户管理",
+      "update_time": "2019-03-12 10:30:13",
+      "weigh": 6
+    },
+    {
+      "child": [
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:44:14",
+          "icon": "",
+          "id": 175,
+          "ismenu": 1,
+          "path": "/discount",
+          "pid": 160,
+          "remark": "",
+          "status": 1,
+          "title": "限时折扣",
+          "update_time": "2019-03-05 16:44:16",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:44:32",
+          "icon": "",
+          "id": 176,
+          "ismenu": 1,
+          "path": "/group-booking",
+          "pid": 160,
+          "remark": "",
+          "status": 1,
+          "title": "多人拼团",
+          "update_time": "2019-03-05 16:44:34",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:44:54",
+          "icon": "",
+          "id": 177,
+          "ismenu": 1,
+          "path": "/bargain",
+          "pid": 160,
+          "remark": "",
+          "status": 1,
+          "title": "助力砍价",
+          "update_time": "2019-03-05 16:44:57",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:45:13",
+          "icon": "",
+          "id": 178,
+          "ismenu": 1,
+          "path": "template-words",
+          "pid": 160,
+          "remark": "",
+          "status": 1,
+          "title": "模板消息",
+          "update_time": "2019-03-05 16:45:16",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-05 16:36:30",
+      "icon": "ios-stats",
+      "id": 160,
+      "ismenu": 1,
+      "path": "/discount",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "营销",
+      "update_time": "2019-03-05 16:36:33",
+      "weigh": 7
+    },
+    {
+      "child": [
+        {
+          "child": [
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:56:54",
+              "icon": "",
+              "id": 189,
+              "ismenu": 1,
+              "path": "/essential-information",
+              "pid": 179,
+              "remark": "",
+              "status": 1,
+              "title": "店铺信息",
+              "update_time": "2019-03-05 16:56:55",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:57:12",
+              "icon": "",
+              "id": 190,
+              "ismenu": 1,
+              "path": "/contact-information",
+              "pid": 179,
+              "remark": "",
+              "status": 1,
+              "title": "联系信息",
+              "update_time": "2019-03-05 16:57:14",
+              "weigh": 0
+            },
+            {
+              "condition": "",
+              "create_time": "2019-03-05 16:57:30",
+              "icon": "",
+              "id": 191,
+              "ismenu": 1,
+              "path": "/address-list",
+              "pid": 179,
+              "remark": "",
+              "status": 1,
+              "title": "地址库",
+              "update_time": "2019-03-05 16:57:32",
+              "weigh": 0
+            }
+          ],
+          "condition": "",
+          "create_time": "2019-03-05 16:45:53",
+          "icon": "",
+          "id": 179,
+          "ismenu": 1,
+          "path": "/essential-information",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "基本设置",
+          "update_time": "2019-03-05 16:45:56",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:46:13",
+          "icon": "",
+          "id": 180,
+          "ismenu": 1,
+          "path": "/wechat-payment-applet",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "支付设置",
+          "update_time": "2019-03-05 16:46:15",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:46:27",
+          "icon": "",
+          "id": 181,
+          "ismenu": 1,
+          "path": "/template-list",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "运费模板",
+          "update_time": "2019-03-05 16:46:29",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:51:49",
+          "icon": "",
+          "id": 182,
+          "ismenu": 1,
+          "path": "/general-setting",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "通用设置",
+          "update_time": "2019-03-05 16:51:51",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-05 16:52:15",
+          "icon": "",
+          "id": 183,
+          "ismenu": 1,
+          "path": "/dt-service",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "版本升级",
+          "update_time": "2019-03-05 16:52:16",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-06 10:14:45",
+          "icon": "",
+          "id": 192,
+          "ismenu": 1,
+          "path": "/management-employee",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "员工管理",
+          "update_time": "2019-03-06 10:14:47",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-06 10:15:18",
+          "icon": "",
+          "id": 193,
+          "ismenu": 1,
+          "path": "/management-role",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "角色管理",
+          "update_time": "2019-03-06 10:15:20",
+          "weigh": 0
+        },
+        {
+          "condition": "",
+          "create_time": "2019-03-06 10:15:56",
+          "icon": "",
+          "id": 194,
+          "ismenu": 1,
+          "path": "/operate-record",
+          "pid": 161,
+          "remark": "",
+          "status": 1,
+          "title": "操作记录",
+          "update_time": "2019-03-06 10:15:59",
+          "weigh": 0
+        }
+      ],
+      "condition": "",
+      "create_time": "2019-03-05 16:36:45",
+      "icon": "ios-settings",
+      "id": 161,
+      "ismenu": 1,
+      "path": "/essential-information",
+      "pid": 0,
+      "remark": "",
+      "status": 1,
+      "title": "设置",
+      "update_time": "2019-03-05 16:36:47",
+      "weigh": 8
+    }
+  ],
+  "msg": "ok"
+}
+测试结束
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>paramunittest.testTemplateList_0</td>
+    <td>TemplateList</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td colspan='2' class='failCase'><div class='testcase'>testTemplateList</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        fail</a>
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: 测试开始
+&lt;RequestsCookieJar[]&gt;
+{
+  "code": 404,
+  "data": [],
+  "msg": "获取模板列表失败"
+}
+测试结束
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Template interface\test_case\Get_TemplateList.py", line 29, in testTemplateList
+    self.TemplateList()
+  File "C:\Users\Administrator\Desktop\Template interface\test_case\Get_TemplateList.py", line 38, in TemplateList
+    self.assertEquals(res["code"],200)
+AssertionError: 404 != 200
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.testgetClass_0</td>
+    <td>getclass</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>testGetClass</div></td>
+    <td colspan='7' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 测试开始
+&lt;RequestsCookieJar[]&gt;
+{
+  "code": 200,
+  "data": [],
+  "msg": "success"
+}
+测试结束
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td colspan='2'>Total</td>
+    <td>4</td>
+    <td>3</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+</body>
+</html>

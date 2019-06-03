@@ -1,0 +1,12 @@
+shop/Get_ShopList
+shop/Enter_Shop
+shop/Get_TemplateList
+Template/Get_Class
+#user/login_case
+#user/test02case
+#user/test03case
+#user/test04case
+#user/test05case
+#shop/test_shop_list
+#shop/test_my_shop
+#shop/test_new_shop
